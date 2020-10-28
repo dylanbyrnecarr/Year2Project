@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags %}
+{% load static %}
+{% block content %}
+<h1>
+    Welcome to our store
+</h1>
+
+    <img src="{% static "images\logo.png" %}">
+        <button class="snipcart-add-item btn btn-primary"
+            data-item-id="build-pc"
+            data-item-price="500.00"
+            data-item-url="/"
+            data-item-description="Pick your dream parts and we'll deal with the rest!  \n Disclaimer: image shown contains RBG lighting kit installed."
+            data-item-image="{% static "images\case.jpg" %}"
+            data-item-name="Build your PC here"
+            data-item-custom1-name="Select your CPU"
+            data-item-custom1-options="Intol i3|Intol i5 +€160[+160.00]|Intol i7 +€200[+200.00]"
+            data-item-custom2-name="Select RAM"
+            data-item-custom2-options="8GB|16GB +€30[+30.00]|24GB +€50[+50.00]|32GB +€70[+70.00]|64GB +€100[+100.00]"
+            data-item-custom3-name="Select GPU"
+            data-item-custom3-options="No GPU|ZXT60 +€150[+150.00]|ZXT70 +€220[+220.00]| ZXT80 +€350[+350.00]|ZXT80++ +€500[+500]"
+            data-item-custom4-name="Select Case Colour"
+            data-item-custom4-options="White|Black|Red|Blue"
+            data-item-custom5-name="Add RGB Lighting?"
+            data-item-custom5-options="No|Yes +€20[+20.00]">
+            Build PC
+        </button>
+        
+
+        <p>Base Price €500</p>
+            
+
+    {% if request.user.is_authenticated%}
+    <div>
+        <p>Need to get in touch?<a href="/chat"> Click here</a></p>
+        <p>Have any queries? Email us and let us know<a href="contact-form/"> Click here</a></p>
+    </div>
+    {% else %}
+    If you wish to give us direct feedback or contact us please log in <a href="/login">here</a>
+    {% endif %}
+    </html>
+    <p>Please comment on your PC builder experience</p>
+    <div id="disqus_thread"></div>
+    <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    var disqus_config = function () {
+    this.page.url = '{{ disqus_url }}'  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = '{{ disqus_identifier }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://localhost-8md8ssbe3c.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <br><br>
+<h2>Or buy your parts seperately down here</h2>
+<br><br><br><br>
+
+<img src="{%static "images\i3.jpg" %}">
+<button class="snipcart-add-item btn btn-primary"
+data-item-id="intol-i3"
+data-item-price="120.00"
+data-item-url="/"
+data-item-description="Entry Level CPU"
+data-item-image="{%static "images\i3.jpg" %}"
+data-item-name="intol-i3">
+intol i3
+</button>
+<br>
+<img src="{%static "images\i5.jpg" %}">
+<button class="snipcart-add-item btn btn-primary"
+data-item-id="intol-i5"
+data-item-price="160.00"
+data-item-url="/"
+data-item-description="Mid Level CPU"
+data-item-image="{%static "images\i5.jpg" %}"
+data-item-name="intol-i5">
+intol i5
+</button>
+<br>
+<img src="{%static "images\i7.jpg" %}">
+<button class="snipcart-add-item btn btn-primary"
+data-item-id="intol-i7"
+data-item-price="200.00"
+data-item-url="/"
+data-item-description="Enthusiast Level CPU btn btn-primary"
+data-item-image="{%static "images\i7.jpg" %}"
+data-item-name="intol-i7">
+intol i7
+</button>
+<br>
+<img src="{%static "images\ZXT60.jpg" %}">
+<button class="snipcart-add-item btn btn-primary"
+data-item-id="ZXT60"
+data-item-price="150.00"
+data-item-url="/"
+data-item-description="Entry Level GPU"
+data-item-image="{%static "images\ZXT60.jpg" %}"
+data-item-name="ZXT60">
+ZXT60
+</button>
+<br>
+<img src="{%static "images\ZXT70.jpg" %}">
+<button class="snipcart-add-item btn btn-primary"
+data-item-id="ZXT70"
+data-item-price="220.00"
+data-item-url="/"
+data-item-description="Mid Level GPU"
+data-item-image="{%static "images\ZXT70.jpg" %}"
+data-item-name="ZXT70">
+ZXT70
+</button>
+<br>
+<img src="{%static "images\ZXT80.png" %}">
+<button class="snipcart-add-item btn btn-primary"
+data-item-id="ZXT80"
+data-item-price="350.00"
+data-item-url="/"
+data-item-description="High level GPU"
+data-item-image="{%static "images\ZXT80.png" %}"
+data-item-name="ZXT80">
+ZXT80
+</button>
+<br>
+<img src="{% static "images\ZXT80++.png" %}">
+<button class="snipcart-add-item btn btn-primary"
+data-item-id="ZXT80++"
+data-item-price="500"
+data-item-url="/"
+data-item-description="Enthusiast Level GPU"
+data-item-image="{% static "images\ZXT80++.png" %}"
+data-item-name="ZXT80++">
+ZXT80++
+</button>
+<br>
+<img src="{% static "images\RGB.jpg" %}">
+<button class="snipcart-add-item btn btn-primary"
+data-item-id="RGB"
+data-item-price="20.00"
+data-item-url="/"
+data-item-description="Light up your game"
+data-item-image="{% static "images\RGB.jpg" %}"
+data-item-name="RGB">
+RGB Lighting Kit
+</button>
+<br>
+<img src="{% static "images\case.jpg" %}">
+<button class="snipcart-add-item btn btn-primary"
+data-item-id="Case"
+data-item-price="100.00"
+data-item-url="/"
+data-item-description="Multiple Colors Available"
+data-item-image="{% static "images\case.jpg" %}"
+data-item-name="Case"
+data-item-custom6-name="Choose Your Color"
+data-item-custom6-options="Red|Black|Blue|White">
+Case
+<div id="disqus_thread"></div>
+    <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    var disqus_config = function () {
+    this.page.url = '{{ disqus_url }}'  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = '{{ disqus_identifier }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://localhost-8md8ssbe3c.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+{% endblock %}
+
